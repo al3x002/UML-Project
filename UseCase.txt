@@ -1,0 +1,30 @@
+@startuml
+
+actor Użytkownik
+actor "System powiadomień" as SystemPowiadomien
+
+usecase "Powiadomienia" as Powiadomienia
+usecase "Quizy o kosmosie" as QuizyOKosmosie
+usecase "Galeria zdjęć" as GaleriaZdjec
+usecase "Minigry" as Minigry
+usecase "Dział społecznościowy" as DzialSpolecznosciowy
+usecase "Przeglądanie artykułów" as PrzegladanieArtykulow
+usecase "Przeglądanie artykułów\nz dodatkowymi informacjami" as PrzegladanieArtykulowZDodatkowymi
+
+Użytkownik --> Minigry
+Użytkownik --> GaleriaZdjec
+Użytkownik --> QuizyOKosmosie
+Użytkownik --> DzialSpolecznosciowy
+Użytkownik --> PrzegladanieArtykulow
+Użytkownik --> PrzegladanieArtykulowZDodatkowymi
+
+SystemPowiadomien --> Powiadomienia
+
+Powiadomienia --> GaleriaZdjec
+Powiadomienia --> DzialSpolecznosciowy
+Powiadomienia --> PrzegladanieArtykulow
+
+Minigry --|> QuizyOKosmosie
+PrzegladanieArtykulow <|-- PrzegladanieArtykulowZDodatkowymi
+
+@enduml
